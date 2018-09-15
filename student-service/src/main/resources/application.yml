@@ -4,12 +4,14 @@ server:
 spring:
   application:
     name: student-service
-  cloud:
-    config:
-      uri: http://localhost:8888
+  boot:
+    admin:
+      client:
+        url:
+        - http://localhost:7700
       
 management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream
+        include: "*"
